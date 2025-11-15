@@ -33,7 +33,7 @@ export default function Introduction({ language }: IntroductionProps) {
     >
       <Container className="space-y-2">
         {/* Title - Mobile: left-aligned, 4 lines; Desktop: center-aligned, 2 lines */}
-        <h1 className="font-rosarivo text-beige-light whitespace-pre-wrap col md:col-span-15 md:col-start-3 text-left sm:text-center text-headline3 xl:text-headline1 3xl:text-title3">
+        <h1 className="font-rosarivo text-beige-light whitespace-pre-wrap col-span-19 md:col-span-15 md:col-start-3 text-left sm:text-center text-headline3 xl:text-headline1 3xl:text-title3">
           <span className="sm:hidden">{currentContent.titleMobile}</span>
           <span className="hidden sm:inline">{currentContent.title}</span>
         </h1>
