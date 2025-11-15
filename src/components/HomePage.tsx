@@ -21,7 +21,7 @@ export default function HomePage({
       <ServiceSection1 language={language} />
       <ServiceSection2 language={language} />
       <Office language={language} />
-      <Footer language={language} />
+      <Footer />
     </div>
   );
 }

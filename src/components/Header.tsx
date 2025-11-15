@@ -3,7 +3,6 @@ import Container from "./Container";
 
 const imgGlobe = "/assets/Globe.svg";
 const imgLogoCgi = "/assets/Logo-CGI.svg";
-const imgUnderscore = "/assets/underscore.svg";
 
 interface HeaderProps {
   language: "EN" | "ZH";

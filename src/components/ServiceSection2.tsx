@@ -3,7 +3,6 @@ import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
 const imgOurStrategy = "/assets/our-strategy.jpg";
-const imgLine17 = "/assets/line.svg";
 
 interface ServiceSection2Props {
   language: "EN" | "ZH";
