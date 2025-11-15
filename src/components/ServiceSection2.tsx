@@ -1,3 +1,8 @@
+import Container from "./Container";
+import Section from "./Section";
+import SectionTitle from "./SectionTitle";
+
+const imgOurStrategy = "/assets/our-strategy.jpg";
 const imgLine17 = "/assets/line.svg";
 
 interface ServiceSection2Props {
@@ -7,7 +12,7 @@ interface ServiceSection2Props {
 export default function ServiceSection2({ language }: ServiceSection2Props) {
   const content = {
     EN: {
-      mainTitle: ["Distinctive Strategy,", "Shared Mission."],
+      mainTitle: ["OUR STRATEGY", "Distinctive Strategy, Shared Mission."],
       items: [
         {
           title: ["Sustainable", "Development"],
@@ -42,35 +47,35 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
       ],
     },
     ZH: {
-      mainTitle: ["獨特策略，", "共同使命。"],
+      mainTitle: ["發展策略", "獨特策略，共同願景"],
       items: [
         {
-          title: ["可持續", "發展"],
+          title: ["永續發展"],
           description:
             "建立一個致力於長期發展目標的家族辦公室，旨在成為可持續的產業和投資集團。",
         },
         {
-          title: ["資產", "配置"],
+          title: ["資產配置"],
           description:
             "利用我們在私募股權投資和行業運營方面的深厚經驗，制定獨特的投資策略，實現長期穩定的資產配置。",
         },
         {
-          title: ["跨代", "傳承"],
+          title: ["跨世代傳承"],
           description:
             "積極培養下一代人才，促進企業和家族的可持續發展，提供全面而務實的傳承培訓。",
         },
         {
-          title: ["國際", "平台"],
+          title: ["國際平台"],
           description:
             "利用新加坡強大的金融體系和稅收優惠，建立先進的家族傳承和財富管理平台。",
         },
         {
-          title: ["獨特", "解決方案"],
+          title: ["獨特方案"],
           description:
             "為每個家族量身定制安全、自主、靈活和獨立的資產管理解決方案。",
         },
         {
-          title: ["長期", "合作夥伴關係"],
+          title: ["長期夥伴關係"],
           description:
             "邀請長期信任和志同道合的合作夥伴參與多家族辦公室的發展。",
         },
@@ -81,36 +86,50 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
   const currentContent = content[language];
 
   return (
-    <section className="bg-dark-brown py-16 px-4 md:px-12 w-full">
-      <div className="max-w-sm md:max-w-4xl lg:max-w-6xl xl:max-w-[1512px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        {/* Left side - image placeholder and title */}
-        <div className="flex flex-col gap-y-7">
-          <div className="bg-[#d9d9d9] aspect-[4/5] mb-8 rounded-lg" />
-          <h2 className="font-rosarivo leading-tight text-white text-3xl md:text-4xl lg:text-5xl">
-            {currentContent.mainTitle[0]}
-            <br />
+    <Section className="bg-brown-dark">
+      <Container>
+        <SectionTitle className="text-beige-light mb-12">
+          {currentContent.mainTitle[0]}
+        </SectionTitle>
+
+        <div className="col-span-19 xl:col-span-6 flex flex-col xl:flex-col-reverse gap-y-8 xl:gap-y-10 mb-14 xl:mb-0">
+          <div className="font-rosarivo text-beige-light text-headline4 xl:text-headline3 3xl:text-headline2">
             {currentContent.mainTitle[1]}
-          </h2>
+          </div>
+          <div
+            className="w-auto h-[480px] sm:h-[280px] md:h-[376px] lg:h-[400px] xl:h-full bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${imgOurStrategy})`,
+            }}
+          />
         </div>
 
-        {/* Right side - grid of items */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="col-span-19 xl:col-span-11 xl:col-start-9 grid grid-cols-19 xl:grid-cols-11">
           {currentContent.items.map((item, index) => (
-            <div key={index} className="">
-              <div className="h-px bg-white mb-6">
-                <img alt="" className="block w-full h-px" src={imgLine17} />
-              </div>
-              <h3 className="font-rosarivo leading-tight text-white text-xl md:text-2xl lg:text-3xl mb-4">
-                <div className="mb-1">{item.title[0]}</div>
-                <div>{item.title[1]}</div>
+            <div
+              key={index}
+              className={
+                index % 2 === 0
+                  ? "col-span-9 xl:col-span-5"
+                  : "col-span-9 col-start-11 xl:col-span-5 xl:col-start-7"
+              }
+            >
+              <div className="h-0.5 w-full bg-beige-light mb-6"></div>
+              <h3 className="font-rosarivo text-beige-light text-headline4 2xl:text-headline-3 mb-4">
+                {item.title[0]}
+                {item.title.length > 1 && (
+                  <>
+                    (<br /> {item.title[1]})
+                  </>
+                )}
               </h3>
-              <p className="font-montserrat font-normal leading-relaxed text-white text-sm md:text-base lg:text-lg">
+              <p className="font-montserrat text-beige-light text-body4 3xl:text-body2 mb-12">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

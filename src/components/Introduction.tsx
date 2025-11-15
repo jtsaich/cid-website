@@ -1,3 +1,7 @@
+import Container from "./Container";
+
+const imgIntroductionBg = "/assets/introduction-bg.jpg";
+
 interface IntroductionProps {
   language: "EN" | "ZH";
 }
@@ -5,38 +9,40 @@ interface IntroductionProps {
 export default function Introduction({ language }: IntroductionProps) {
   const content = {
     EN: {
-      title: ["Diversified", "Professional Resources"],
-      subtitle: "CID Multi-Family Office",
+      title: "Weaving Your Family Values\nInto a Timeless Legacy",
+      titleMobile: "Weaving\nYour Family Values\nInto a\nTimeless Legacy",
       description:
-        "Assisting families in completing unique and flexible long-term plans to achieve sustainable development goals.",
+        "Partnering with visionary entrepreneurs, we help families craft an everlasting heritage, harmonizing family values, enduring businesses, and treasured wealth for generations to come.",
     },
     ZH: {
-      title: ["多元化", "專業資源"],
-      subtitle: "CID 多家族辦公室",
-      description: "協助家族完成獨特且靈活的長期規劃，實現可持續發展目標。",
+      title: "傳承家族價值，成就永恆基業",
+      titleMobile: "傳承家族價值，\n成就永恆基業",
+      description:
+        "我們與遠見卓識的創業家並肩同行，協助家族構築歷久彌新的傳承藍圖，\n融合家族精神、常青基業與世代財富，為後代奠定和諧永續的未來。",
     },
   };
 
   const currentContent = content[language];
 
   return (
-    <section className="bg-light-beige relative min-h-screen flex flex-col items-center justify-center px-4 py-16 w-full">
-      <div className="absolute bg-[#d9d9d9] inset-0" />
-
-      <div className="relative z-10 max-w-sm md:max-w-4xl lg:max-w-6xl xl:max-w-[1512px] mx-auto text-center space-y-8">
-        <h1 className="font-rosarivo leading-tight text-deep-blue text-4xl md:text-6xl lg:text-7xl">
-          <div className="mb-2">{currentContent.title[0]}</div>
-          <div>{currentContent.title[1]}</div>
+    <div
+      className="flex w-full h-[720px] sm:h-[480px] xl:h-[600px] 2xl:h-[720px] 3xl:h-[900px] pt-[120px] pb-[144px] bg-cover bg-center items-center justify-center"
+      style={{
+        backgroundImage: `url(${imgIntroductionBg})`,
+      }}
+    >
+      <Container className="space-y-2">
+        {/* Title - Mobile: left-aligned, 4 lines; Desktop: center-aligned, 2 lines */}
+        <h1 className="font-rosarivo text-beige-light whitespace-pre-wrap col md:col-span-15 md:col-start-3 text-left sm:text-center text-headline3 xl:text-headline1 3xl:text-title3">
+          <span className="sm:hidden">{currentContent.titleMobile}</span>
+          <span className="hidden sm:inline">{currentContent.title}</span>
         </h1>
 
-        <h2 className="font-rosarivo leading-relaxed text-deep-blue text-2xl md:text-4xl lg:text-5xl">
-          {currentContent.subtitle}
-        </h2>
-
-        <p className="font-rosarivo leading-relaxed text-deep-blue text-lg md:text-2xl lg:text-3xl max-w-6xl mx-auto">
+        {/* Description */}
+        <p className="font-montserrat text-beige-light whitespace-pre-wrap col-span-19 md:col-span-15 md:col-start-3 text-left sm:text-center text-body4 3xl:text-body2">
           {currentContent.description}
         </p>
-      </div>
-    </section>
+      </Container>
+    </div>
   );
 }

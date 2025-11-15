@@ -1,64 +1,85 @@
-const imgLine13 = "/assets/line.svg";
+import Container from "./Container";
+import Section from "./Section";
+import SectionTitle from "./SectionTitle";
+
+const imgOurOffices = "/assets/our-offices.jpg";
 
 interface OfficeProps {
-  language: 'EN' | 'ZH';
+  language: "EN" | "ZH";
 }
 
 export default function Office({ language }: OfficeProps) {
   const content = {
     EN: {
-      title: "Singapore Office",
+      title: "OUR OFFICES",
+      location: "Singapore",
+      addressLabel: "Address:",
       address: "Fullerton Road #02-01, One Fullerton, Singapore 049213",
-      phone: "Tel: +65-6408-3807",
-      email: "Email: cgi-general@cidglobal.com",
-      buttonText: "View Map"
+      phoneLabel: "Phone:",
+      phone: "+65-6408-3807",
+      emailLabel: "Mail:",
+      email: "cgi-general@cidglobal.com",
     },
     ZH: {
-      title: "新加坡辦事處",
-      address: "新加坡富勒頓路 #02-01，富勒頓一號，新加坡 049213",
-      phone: "電話: +65-6408-3807",
-      email: "電子郵件: cgi-general@cidglobal.com",
-      buttonText: "查看地圖"
-    }
+      title: "辦公室",
+      location: "新加坡",
+      addressLabel: "地址：",
+      address: "Fullerton Road #02-01, One Fullerton, Singapore 049213",
+      phoneLabel: "電話：",
+      phone: "+65-6408-3807",
+      emailLabel: "郵件：",
+      email: "cgi-general@cidglobal.com",
+    },
   };
 
   const currentContent = content[language];
 
   return (
-    <section className="bg-light-beige py-16 px-4 md:px-12 w-full">
-      <div className="max-w-sm md:max-w-4xl lg:max-w-6xl xl:max-w-[1512px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="space-y-6">
-          <h2 className="font-rosarivo leading-tight text-deep-blue text-2xl md:text-3xl lg:text-4xl">
-            {currentContent.title}
-          </h2>
-          
-          <p className="font-rosarivo leading-relaxed text-deep-blue text-lg md:text-xl lg:text-2xl">
-            {currentContent.address}
-          </p>
-          
-          <div className="h-px">
-            <img alt="" className="block w-full h-px" src={imgLine13} />
-          </div>
-          
-          <p className="font-rosarivo leading-relaxed text-deep-blue text-lg md:text-xl lg:text-2xl">
-            {currentContent.phone}
-          </p>
-          
-          <div className="h-px">
-            <img alt="" className="block w-full h-px" src={imgLine13} />
-          </div>
-          
-          <p className="font-rosarivo leading-relaxed text-deep-blue text-lg md:text-xl lg:text-2xl">
-            {currentContent.email}
-          </p>
-          
-          <button className="bg-dark-brown text-white font-montserrat font-semibold text-sm md:text-base px-8 md:px-12 py-3 md:py-4 hover:opacity-90 transition-opacity rounded">
-            {currentContent.buttonText}
-          </button>
+    <Section className="bg-beige-mid w-full">
+      <Container>
+        <SectionTitle className="text-blue-deep mb-12">
+          {currentContent.title}
+        </SectionTitle>
+        <div className="col-span-19 xl:col-span-6 flex flex-col xl:flex-col-reverse gap-y-8 xl:gap-y-10 mb-14 xl:mb-0">
+          <div
+            className="w-auto h-[480px] sm:h-[280px] md:h-[376px] lg:h-[400px] xl:h-full bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${imgOurOffices})`,
+            }}
+          />
         </div>
-        
-        <div className="bg-[#d9d9d9] aspect-[4/3] rounded-lg" />
-      </div>
-    </section>
+        <div className="col-span-19 xl:col-span-11 xl:col-start-9 flex flex-col gap-8">
+          <div className="font-rosarivo text-blue-deep text-headline4 xl:text-headline3 2xl:text-headline2">
+            {currentContent.location}
+          </div>
+          <div className="h-0.5 w-full bg-blue-deep" />
+
+          <div className="grid grid-cols-19 xl:grid-cols-11 gap-y-4 2xl:gap-y-6">
+            <p className="col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+              {currentContent.addressLabel}
+            </p>
+            <p className="col-start-5 col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+              {currentContent.address}
+            </p>
+
+            <p className="col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+              {currentContent.phoneLabel}
+            </p>
+            <p className="col-start-5 col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+              {currentContent.phone}
+            </p>
+
+            <p className="col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+              {currentContent.emailLabel}
+            </p>
+            <p className="col-start-5 col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+              {currentContent.email}
+            </p>
+          </div>
+
+          <div className="h-0.5 w-full bg-blue-deep" />
+        </div>
+      </Container>
+    </Section>
   );
 }
