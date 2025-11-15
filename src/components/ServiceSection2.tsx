@@ -118,7 +118,7 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
                 {item.title[0]}
                 {item.title.length > 1 && (
                   <>
-                    (<br /> {item.title[1]})
+                    <br /> {item.title[1]}
                   </>
                 )}
               </h3>
