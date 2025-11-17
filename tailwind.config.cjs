@@ -43,6 +43,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         19: "repeat(19, minmax(0, 1fr))",
+        19: "repeat(19, minmax(0, 1fr))",
+        27: "repeat(27, minmax(0, 1fr))",
+        31: "repeat(31, minmax(0, 1fr))",
       },
       gridColumn: {
         "span-14": "span 14 / span 14",
@@ -51,6 +54,8 @@ module.exports = {
       },
       gridColumnStart: {
         15: "15",
+        21: "21",
+        23: "23",
       },
       fontSize: {
         title1: [

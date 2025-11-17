@@ -2,6 +2,8 @@ import { useState } from "react";
 import Container from "./Container";
 
 const imgGlobe = "/assets/Globe.svg";
+const imgMenu = "/assets/Menu.svg";
+const imgClose = "/assets/Close.svg";
 const imgLogoCgi = "/assets/Logo-CGI.svg";
 
 interface HeaderProps {
@@ -31,11 +33,11 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
   return (
     <>
-      <header className="bg-light-beige w-full relative z-30">
+      <header className="bg-beige-light w-full relative z-30">
         <Container className="">
           <div className="col-span-19 py-6 flex items-center justify-between">
             {/* Logo */}
-            <div className="w-auto h-[56px]">
+            <div className="w-auto h-[32px] sm:h-[56px]">
               <img
                 alt="CID Global Investments Logo"
                 className="block w-full h-full object-contain"
@@ -43,8 +45,19 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
               />
             </div>
 
+            <div
+              className="xl:hidden w-6 h-6 cursor-pointer"
+              onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+            >
+              <img
+                alt="Menu"
+                className="block w-6 h-6"
+                src={isLanguageDropdownOpen ? imgClose : imgMenu}
+              />
+            </div>
+
             {/* Navigation */}
-            <div className="flex items-center gap-6">
+            <div className="hidden xl:flex items-center gap-6">
               {/* Contact Us */}
               <div className="hidden sm:block">
                 <a
@@ -58,7 +71,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
               {/* Language Switcher */}
               <div className="flex items-center gap-2 relative">
                 <div
-                  className="w-5 h-5 md:w-6 md:h-6 cursor-pointer"
+                  className="w-6 h-6 cursor-pointer"
                   onClick={() =>
                     setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
                   }

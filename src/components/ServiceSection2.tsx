@@ -109,16 +109,19 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
               key={index}
               className={
                 index % 2 === 0
-                  ? "col-span-9 xl:col-span-5"
-                  : "col-span-9 col-start-11 xl:col-span-5 xl:col-start-7"
+                  ? "col-span-19 sm:col-span-9 xl:col-span-5"
+                  : "col-span-19 sm:col-span-9 sm:col-start-11 xl:col-span-5 xl:col-start-7"
               }
             >
               <div className="h-0.5 w-full bg-beige-light mb-6"></div>
-              <h3 className="font-rosarivo text-beige-light text-headline4 2xl:text-headline-3 mb-4">
+              <h3 className="font-rosarivo text-beige-light text-headline4 3xl:text-headline-3 mb-2">
                 {item.title[0]}
                 {item.title.length > 1 && (
                   <>
-                    <br /> {item.title[1]}
+                    <span className="hidden sm:inline">
+                      <br />
+                    </span>{" "}
+                    {item.title[1]}
                   </>
                 )}
               </h3>

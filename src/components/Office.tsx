@@ -40,6 +40,9 @@ export default function Office({ language }: OfficeProps) {
         <SectionTitle className="text-blue-deep mb-12">
           {currentContent.title}
         </SectionTitle>
+        <div className="xl:hidden mb-8 font-rosarivo text-blue-deep text-headline4 xl:text-headline3 2xl:text-headline2">
+          {currentContent.location}
+        </div>
         <div className="col-span-19 xl:col-span-6 flex flex-col xl:flex-col-reverse gap-y-8 xl:gap-y-10 mb-14 xl:mb-0">
           <div
             className="w-auto h-[480px] sm:h-[280px] md:h-[376px] lg:h-[400px] xl:h-full bg-cover bg-center"
@@ -49,30 +52,30 @@ export default function Office({ language }: OfficeProps) {
           />
         </div>
         <div className="col-span-19 xl:col-span-11 xl:col-start-9 flex flex-col gap-8">
-          <div className="font-rosarivo text-blue-deep text-headline4 xl:text-headline3 2xl:text-headline2">
+          <div className="hidden xl:block font-rosarivo text-blue-deep text-headline4 xl:text-headline3 2xl:text-headline2">
             {currentContent.location}
           </div>
           <div className="h-0.5 w-full bg-blue-deep" />
 
-          <div className="grid grid-cols-19 xl:grid-cols-11 gap-y-4 2xl:gap-y-6">
-            <p className="col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+          <div className="grid grid-cols-11 gap-2 sm:grid-cols-19 sm:gap-0 xl:grid-cols-11 gap-y-4 2xl:gap-y-6">
+            <p className="col-span-3 sm:col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
               {currentContent.addressLabel}
             </p>
-            <p className="col-start-5 col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+            <p className="col-start-4 col-span-8 sm:col-start-5 sm:col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
               {currentContent.address}
             </p>
 
-            <p className="col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+            <p className="col-span-3 sm:col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
               {currentContent.phoneLabel}
             </p>
-            <p className="col-start-5 col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+            <p className="col-start-4 col-span-8 sm:col-start-5 sm:col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
               {currentContent.phone}
             </p>
 
-            <p className="col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+            <p className="col-span-3 sm:col-span-4 xl:col-span-3 font-montserrat text-blue-deep text-body4 3xl:text-body2">
               {currentContent.emailLabel}
             </p>
-            <p className="col-start-5 col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
+            <p className="col-start-4 col-span-8 sm:col-start-5 sm:col-span-14 xl:col-start-4 xl:col-span-8 font-montserrat text-blue-deep text-body4 3xl:text-body2">
               {currentContent.email}
             </p>
           </div>
