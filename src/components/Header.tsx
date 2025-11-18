@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "./Container";
 
 const imgGlobe = "/assets/Globe.svg";
@@ -13,6 +13,33 @@ interface HeaderProps {
 
 export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 10) {
+        // Always show header at the top
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show header
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px - hide header
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const content = {
     EN: {
@@ -33,8 +60,12 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
   return (
     <>
-      <header className="bg-beige-light w-full relative z-30">
-        <Container className="">
+      <header
+        className={`fixed top-0 bg-beige-light w-full z-30 transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        } ${isLanguageDropdownOpen ? "h-screen xl:h-auto" : ""}`}
+      >
+        <Container>
           <div className="col-span-19 py-6 flex items-center justify-between">
             {/* Logo */}
             <div className="w-auto h-[32px] sm:h-[56px]">

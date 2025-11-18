@@ -26,7 +26,7 @@ export default function Introduction({ language }: IntroductionProps) {
 
   return (
     <div
-      className="flex w-full h-[720px] sm:h-[480px] xl:h-[600px] 2xl:h-[720px] 3xl:h-[900px] pt-[120px] pb-[144px] bg-cover bg-center items-center justify-center"
+      className="mt-[80px] sm:mt-[104px] flex w-full h-[720px] sm:h-[480px] xl:h-[600px] 2xl:h-[720px] 3xl:h-[900px] pt-[120px] pb-[144px] bg-cover bg-center items-center justify-center"
       style={{
         backgroundImage: `url(${imgIntroductionBg})`,
       }}
