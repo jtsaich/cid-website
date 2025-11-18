@@ -62,7 +62,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
     <>
       <header
         className={`fixed top-0 bg-beige-light w-full z-30 transition-transform duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
+          isVisible || isLanguageDropdownOpen ? "translate-y-0" : "-translate-y-full"
         } ${isLanguageDropdownOpen ? "h-screen xl:h-auto" : ""}`}
       >
         <Container>
