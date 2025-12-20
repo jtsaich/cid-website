@@ -12,7 +12,7 @@ export default function SectionSubTitle({
 }: SectionSubTitleProps) {
   return (
     <h3
-      className={`font-rosarivo whitespace-pre-wrap col-span-10 text-left text-headline4 2xl:text-headline3 3xl:text-headline2 ${className}`}
+      className={`font-rosarivo whitespace-pre-wrap col-span-10 text-left text-headline4 xl:text-headline3 3xl:text-headline2 ${className}`}
     >
       {children}
     </h3>

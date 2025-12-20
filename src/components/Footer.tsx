@@ -4,7 +4,7 @@ const imgLogoCgi = "/assets/Logo-CGI-light.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-deep w-full">
+    <footer className="bg-brown-dark w-full">
       <Container className="h-[200px] text-beige-light">
         <div className="col-span-19 flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-y-6">
           <div className="w-auto h-[56px]">

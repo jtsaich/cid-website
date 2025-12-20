@@ -91,19 +91,19 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
           {currentContent.mainTitle[0]}
         </SectionTitle>
 
-        <div className="col-span-19 xl:col-span-6 flex flex-col xl:flex-col-reverse gap-y-8 xl:gap-y-10 mb-14 xl:mb-0">
+        <div className="col-span-19 xl:col-span-6 flex flex-col xl:flex-col-reverse gap-y-8 xl:gap-y-10 mb-14 xl:mb-0 justify-end">
           <div className="font-rosarivo text-beige-light text-headline4 xl:text-headline3 3xl:text-headline2">
             {currentContent.mainTitle[1]}
           </div>
           <div
-            className="w-auto h-[480px] sm:h-[280px] md:h-[376px] lg:h-[400px] xl:h-full bg-cover bg-center"
+            className="w-auto h-[480px] sm:h-[280px] md:h-[376px] lg:h-[400px] xl:h-[656px] 2xl:h-[584px] 3xl:h-[748px] bg-cover bg-center"
             style={{
               backgroundImage: `url(${imgOurStrategy})`,
             }}
           />
         </div>
 
-        <div className="col-span-19 xl:col-span-11 xl:col-start-9 grid grid-cols-19 xl:grid-cols-11">
+        <div className="col-span-19 xl:col-span-11 xl:col-start-9 grid grid-cols-19 xl:grid-cols-11 gap-y-12">
           {currentContent.items.map((item, index) => (
             <div
               key={index}
@@ -114,7 +114,7 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
               }
             >
               <div className="h-0.5 w-full bg-beige-light mb-6"></div>
-              <h3 className="font-rosarivo text-beige-light text-headline4 3xl:text-headline-3 mb-2">
+              <h3 className="font-rosarivo text-beige-light text-headline4 3xl:text-headline3 mb-2 whitespace-nowrap sm:whitespace-normal">
                 {item.title[0]}
                 {item.title.length > 1 && (
                   <>
@@ -125,7 +125,7 @@ export default function ServiceSection2({ language }: ServiceSection2Props) {
                   </>
                 )}
               </h3>
-              <p className="font-montserrat text-beige-light text-body4 3xl:text-body2 mb-12">
+              <p className="font-montserrat text-beige-light text-body4 3xl:text-body2">
                 {item.description}
               </p>
             </div>

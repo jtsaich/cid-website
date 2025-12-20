@@ -71,7 +71,7 @@ export default function ServiceSection1({ language }: ServiceSection1Props) {
 
   return (
     <Section className="bg-beige-light">
-      <Container className="space-y-12 mb-12">
+      <Container className="space-y-8 sm:space-y-9 xl:space-y-12 mb-8 sm:mb-9 xl:mb-12">
         {/* Section Title */}
         <SectionTitle className="font-rosarivo text-blue-deep col-span-19">
           {currentContent.sectionTitle}
@@ -102,7 +102,7 @@ export default function ServiceSection1({ language }: ServiceSection1Props) {
                     : "col-span-19 sm:col-span-9 sm:col-start-23 md:col-span-7 md:col-start-21 xl:col-span-5 xl:col-start-15"
                 }`}
               >
-                <div className="aspect-[3/4] w-full overflow-hidden">
+                <div className="w-full h-[480px] sm:h-[296px] md:h-[304px] lg:h-[376px] 2xl:h-[432px] 3xl:h-[536px] overflow-hidden">
                   <img
                     src={card.image}
                     alt={card.title}
