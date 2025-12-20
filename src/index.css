@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rosarivo:wght@400&family=Montserrat:wght@400;600&family=Noto+Sans+TC:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rosarivo:wght@400&family=Montserrat:wght@400;600&family=Noto+Sans+TC:wght@400;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,4 +8,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@layer utilities {
+  .nav-link-underline {
+    position: relative;
+  }
+
+  .nav-link-underline::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: theme("colors.brown-dark");
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+  }
+
+  .nav-link-underline:hover::before {
+    visibility: visible;
+    width: 100%; /* Full width underline */
+  }
 }

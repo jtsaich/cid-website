@@ -62,7 +62,9 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
     <>
       <header
         className={`fixed top-0 bg-beige-light w-full z-30 transition-transform duration-300 ${
-          isVisible || isLanguageDropdownOpen ? "translate-y-0" : "-translate-y-full"
+          isVisible || isLanguageDropdownOpen
+            ? "translate-y-0"
+            : "-translate-y-full"
         } ${isLanguageDropdownOpen ? "h-screen xl:h-auto" : ""}`}
       >
         <Container>
@@ -93,7 +95,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
               <div className="hidden sm:block">
                 <a
                   href="mailto:cgi-general@cidglobal.com"
-                  className="font-montserrat font-semibold text-brown-dark text-sm md:text-base cursor-pointer hover:opacity-80"
+                  className="nav-link-underline font-montserrat font-semibold text-brown-dark text-sm md:text-base cursor-pointer"
                 >
                   {currentContent.contactUs}
                 </a>
