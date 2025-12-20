@@ -135,7 +135,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                   </h3>
 
                   {/* Language options */}
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-y-[26px]">
                     {/* English option */}
                     <div
                       className="flex flex-col gap-2 cursor-pointer w-fit"
@@ -144,12 +144,13 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                         setIsLanguageDropdownOpen(false);
                       }}
                     >
-                      <div className="font-montserrat font-semibold text-brown-dark text-body3">
+                      <div
+                        className={`nav-link-underline font-montserrat font-semibold text-brown-dark text-body3 ${
+                          language === "EN" ? "nav-link-underline-active" : ""
+                        }`}
+                      >
                         {currentContent.languageEN}
                       </div>
-                      {language === "EN" && (
-                        <div className="h-0.5 w-full bg-brown-dark" />
-                      )}
                     </div>
 
                     {/* Chinese option */}
@@ -160,12 +161,13 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                         setIsLanguageDropdownOpen(false);
                       }}
                     >
-                      <div className="font-montserrat font-semibold text-brown-dark text-body3">
+                      <div
+                        className={`nav-link-underline font-montserrat font-semibold text-brown-dark text-body3 ${
+                          language === "ZH" ? "nav-link-underline-active" : ""
+                        }`}
+                      >
                         {currentContent.languageZH}
                       </div>
-                      {language === "ZH" && (
-                        <div className="h-0.5 w-full bg-brown-dark" />
-                      )}
                     </div>
                   </div>
                 </div>

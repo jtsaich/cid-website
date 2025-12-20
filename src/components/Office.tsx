@@ -40,7 +40,7 @@ export default function Office({ language }: OfficeProps) {
         <SectionTitle className="text-blue-deep mb-12">
           {currentContent.title}
         </SectionTitle>
-        <div className="xl:hidden mb-8 font-rosarivo text-blue-deep text-headline4 xl:text-headline3 2xl:text-headline2">
+        <div className="col-span-19 xl:hidden mb-8 font-rosarivo text-blue-deep text-headline4 xl:text-headline3 2xl:text-headline2">
           {currentContent.location}
         </div>
         <div className="col-span-19 xl:col-span-6 flex flex-col xl:flex-col-reverse gap-y-8 xl:gap-y-10 mb-12 xl:mb-0">

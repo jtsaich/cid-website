@@ -20,7 +20,7 @@
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -4px;
+    bottom: -8px;
     left: 50%;
     background-color: theme("colors.brown-dark");
     visibility: hidden;
@@ -28,7 +28,8 @@
     transform: translateX(-50%);
   }
 
-  .nav-link-underline:hover::before {
+  .nav-link-underline:hover::before,
+  .nav-link-underline-active::before {
     visibility: visible;
     width: 100%; /* Full width underline */
   }
